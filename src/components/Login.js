@@ -12,6 +12,10 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const handleNewUser =async ()=>{
+    navigate('/SignUp')
+  }
+
   const handleRedirect = async (username) => {
     const userExists = students.find((user) => user.rollno === username);
     if (userExists) {
@@ -42,11 +46,7 @@ const LoginPage = () => {
     <div className="bg-gradient-to-r from-slate-900 to-sky-900 min-h-screen flex items-center justify-center">
       <div className="absolute bg-black bg-opacity-40 p-8 rounded-md w-full sm:w-96">
         <div className="mx-auto flex items-center justify-center">
-          <img
-            src={logo} 
-            alt="Logo"
-            className="h-24 mb-6"
-          />
+          <img src={logo} alt="Logo" className="h-24 mb-6" />
         </div>
         <h1 className="text-center text-3xl font-bold text-white mb-6">
           Assignment Tracker
@@ -87,11 +87,16 @@ const LoginPage = () => {
                 required
               />
             </label>
+
             <button
               type="submit"
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
             >
               Login
+            </button>
+            <p className="text-white">New User?</p>
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-half" onClick={handleNewUser}>
+              SignUp
             </button>
           </form>
         )}

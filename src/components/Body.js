@@ -8,12 +8,17 @@ import LeaderBoard from "./LeaderBoard";
 import Ranking from "./Ranking";
 import Profile from "./Profile";
 import AboutUs from "./AboutUs";
+import SignUp from "./SignUp";
 
 const App = () => {
   const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <Login />,
+    },
+    {
+      path:"/SignUp",
+      element:<SignUp/>,
     },
     {
       path: "/dashboard",
